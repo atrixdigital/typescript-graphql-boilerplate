@@ -1,0 +1,13 @@
+idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+dist
+.next
+*.log
+.DS_Store
+build-docker-image.sh
+run-docker-image.sh
+yarn-error.log

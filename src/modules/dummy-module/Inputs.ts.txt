@@ -1,0 +1,13 @@
+import { Field, InputType } from "type-graphql";
+import { IsUnique } from "../shared/uniqueValidation";
+import { Company } from "../../entity/company";
+
+@InputType()
+export class CreateCompanyInput {
+  @Field()
+  @IsUnique(Company)
+  title: string;
+
+  @Field({ nullable: true })
+  logo?: string;
+}

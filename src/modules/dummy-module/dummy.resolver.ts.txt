@@ -1,0 +1,22 @@
+import { Resolver, FieldResolver, Root } from "type-graphql";
+import { createBaseResolver } from "../shared/createBaseResolver";
+import { CreateCompanyInput } from "./Inputs";
+import { Company } from "../../entity/company";
+
+const BaseResolver = createBaseResolver(
+  "Company",
+  Company,
+  CreateCompanyInput,
+  Company
+);
+
+@Resolver(Company)
+export class CompanyResolver extends BaseResolver {
+  @FieldResolver()
+  logo(@Root() { logo }: Company): string | undefined {
+    if (logo) {
+      return `${process.env.SERVER_URL}/images/company/${logo}`;
+    }
+    return logo;
+  }
+}

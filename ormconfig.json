@@ -1,0 +1,28 @@
+[
+  {
+    "name": "default",
+    "type": "mongodb",
+    "host": "",
+    "port": 0,
+    "username": "",
+    "password": "",
+    "database": "",
+    "useNewUrlParser": true,
+    "synchronize": true,
+    "logging": true,
+    "entities": ["./src/entity/*.ts"]
+  },
+  {
+    "name": "production",
+    "type": "mongodb",
+    "host": "",
+    "port": 0,
+    "username": "",
+    "password": "",
+    "database": "",
+    "useNewUrlParser": true,
+    "synchronize": false,
+    "logging": false,
+    "entities": ["./dist/entity/*.js"]
+  }
+]
